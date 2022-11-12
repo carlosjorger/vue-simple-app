@@ -1,8 +1,12 @@
 <template>
-  <div>
-    <li v-for="toDo in toDos" :key="toDo.name">
-      <p>{{ toDo }}</p>
-    </li>
+  <div class="toToList">
+    <input v-model="tempToDo"/>
+    <button v-on:click="addToDo">Add toDo</button>
+    <ul>
+      <li v-for="toDo in toDos" :key="toDo.id">
+        <p>{{ toDo.name }}</p>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -11,14 +15,18 @@ export default {
   name: 'VueToDoList',
   data () {
     return {
-      toDos: [
-        {
-          name: 'Estudiar ingles'
-        },
-        {
-          name: 'Leer libro pendiente'
-        }
-      ]
+      count: 0,
+      tempToDo: 'cosa por hacer',
+      toDos: []
+    }
+  },
+  methods: {
+    addToDo: function () {
+      this.count++
+      this.toDos.push({
+        'id': this.count,
+        'name': this.tempToDo
+      })
     }
   }
 }
@@ -26,11 +34,10 @@ export default {
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1 {
-  font-weight: normal;
-}
+  ul{
+    max-width: 40vw;
+    font-size: 1.5vw;
 
-h3 {
-  text-align: left;
-}
+  }
+
 </style>

@@ -18,7 +18,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .footer{
-  margin-left: 10vw;
-  text-align: left;
+  font-size: 2vw;
+
 }
 </style>

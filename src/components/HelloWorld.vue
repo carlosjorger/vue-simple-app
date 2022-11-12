@@ -27,7 +27,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h1 {
-  font-weight: normal;
+  font-size: 4vw;
 }
 h3{
   text-align: left;
