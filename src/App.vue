@@ -19,5 +19,6 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
   margin-left: 15vw;
+  margin-right: 15vw;
 }
 </style>

@@ -1,12 +1,14 @@
 
 <template>
   <div class="toToList">
-    <input v-model="tempToDo"/>
+    <input v-model="tempToDoName"/>
+    <input v-model="tempToDoDescription"/>
+
     <button v-on:click="addToDo">Add toDo</button>
-    <ul>
+    <div class="toDo-cardList">
       <vue-to-do v-for="toDo in toDos" :key="toDo.id" v-bind:toDo="toDo">
       </vue-to-do>
-    </ul>
+    </div>
   </div>
 </template>
 
@@ -17,7 +19,8 @@ export default {
   data () {
     return {
       count: 0,
-      tempToDo: 'cosa por hacer',
+      tempToDoName: 'cosa por hacer',
+      tempToDoDescription: 'una cosa que no he hecho todavia',
       toDos: []
     }
   },
@@ -27,7 +30,8 @@ export default {
       this.count++
       this.toDos.push({
         'id': this.count,
-        'name': this.tempToDo
+        'name': this.tempToDoName,
+        'description': this.tempToDoDescription
       })
     }
   }
@@ -36,10 +40,9 @@ export default {
 
   <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  ul{
-    max-width: 40vw;
-    font-size: 1.5vw;
-
+  .toDo-cardList{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 
 </style>
