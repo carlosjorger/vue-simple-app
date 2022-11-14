@@ -1,16 +1,17 @@
+
 <template>
   <div class="toToList">
     <input v-model="tempToDo"/>
     <button v-on:click="addToDo">Add toDo</button>
     <ul>
-      <li v-for="toDo in toDos" :key="toDo.id">
-        <p>{{ toDo.name }}</p>
-      </li>
+      <vue-to-do v-for="toDo in toDos" :key="toDo.id" v-bind:toDo="toDo">
+      </vue-to-do>
     </ul>
   </div>
 </template>
 
 <script>
+import VueToDo from './VueToDo.vue'
 export default {
   name: 'VueToDoList',
   data () {
@@ -20,6 +21,7 @@ export default {
       toDos: []
     }
   },
+  components: {VueToDo},
   methods: {
     addToDo: function () {
       this.count++
