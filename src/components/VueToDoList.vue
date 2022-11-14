@@ -42,7 +42,8 @@ export default {
 <style scoped>
   .toDo-cardList{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: auto auto auto auto;
+    grid-gap: 1vw;
   }
 
 </style>

@@ -20,7 +20,6 @@ export default {
     grid-template-rows:max-content 15vh;
     border-style: solid;
     max-width: 40vw;
-    margin: 8px;
   }
   header>h2{
     margin: 0;
