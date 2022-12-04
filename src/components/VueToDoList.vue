@@ -6,7 +6,10 @@
 
     <button v-on:click="addToDo">Add toDo</button>
     <div class="toDo-cardList">
-      <vue-to-do v-for="toDo in toDos" :key="toDo.id" v-bind:toDo="toDo">
+      <vue-to-do
+        v-for="toDo in toDos"
+        :key="toDo.id"
+        v-bind:toDo="toDo">
       </vue-to-do>
     </div>
   </div>
